@@ -18,6 +18,10 @@ const int NumberOfLEDS = (sizeof(LEDPins)/sizeof(LEDPins[0]));
 const int distanceToWin = 10000;
 const int afterGameWaitTime = 5000;     // 5 Seconds
 
+// Timing Delays
+int delay1 = 350;               // Short Delay
+int delay2 = 650;               // Long Delay
+
 // Game variables
 int P1Wins = 0;
 int P2Wins = 0;
@@ -91,10 +95,10 @@ void loop() {
   	    for(int i = 0; i < 3; i++) {
 	        digitalWrite(LEDPins[3], LOW);      // P1 Red On
           digitalWrite(LEDPins[6], LOW);      // P2 Red On
-         delay(100);
+         delay(delay1);
 	        digitalWrite(LEDPins[3], HIGH);     // P1 Red Off
   	      digitalWrite(LEDPins[6], HIGH);     // P2 Red Off
-    	    delay(900);
+    	    delay(delay2);
   	    }
   	    isNewGame = false;
   	  }
@@ -128,10 +132,10 @@ void loop() {
 	      for(int i = 0; i < 3; i++) {
   	      digitalWrite(LEDPins[1], LOW);      // P1 Green On
           digitalWrite(LEDPins[4], LOW);      // P2 Green On
-  	      delay(100);
+  	      delay(delay1);
           digitalWrite(LEDPins[1], HIGH);     // P1 Green Off
           digitalWrite(LEDPins[4], HIGH);     // P2 Green Off
-  	      delay(100);
+  	      delay(delay1);
  	      }
 	      P2Wins++;
  	      P1Wins++;
@@ -143,10 +147,10 @@ void loop() {
 	      for(int i = 0; i < 3; i++) {
   	      digitalWrite(LEDPins[1], LOW);      // P1 Green On
           digitalWrite(LEDPins[4], LOW);      // P2 Green On
-  	      delay(100);
+  	      delay(delay1);
           digitalWrite(LEDPins[1], HIGH);     // P1 Green Off
           digitalWrite(LEDPins[4], HIGH);     // P2 Green Off
-          delay(100);
+          delay(delay1);
         }
         P1Wins++;
  	      digitalWrite(LEDPins[2], LOW);        // P1 Yellow On
@@ -156,10 +160,10 @@ void loop() {
       	for(int i = 0; i < 3; i++) {
     	   digitalWrite(LEDPins[1], LOW);      // P1 Green On
          digitalWrite(LEDPins[4], LOW);      // P2 Green On
-         delay(100);
+         delay(delay1);
 	       digitalWrite(LEDPins[1], HIGH);     // P1 Green Off
          digitalWrite(LEDPins[4], HIGH);     // P2 Green Off
-         delay(100);
+         delay(delay1);
   	    }
         P2Wins++;
   	    digitalWrite(LEDPins[5], LOW);        // P2 Yellow on
@@ -202,10 +206,10 @@ void loop() {
   	   for(int i = 0; i < 3; i++) {
 	       digitalWrite(LEDPins[3], LOW);      // P1 Red On
   	     digitalWrite(LEDPins[6], LOW);      // P2 Red On
-    	   delay(100);
+    	   delay(delay1);
 	       digitalWrite(LEDPins[3], HIGH);     // P1 Red Off
   	     digitalWrite(LEDPins[6], HIGH);     // P2 Red Off
-    	   delay(100);
+    	   delay(delay1);
     	 }
   	   isNewGame = true;
 	   }
@@ -213,10 +217,10 @@ void loop() {
   	   for(int i = 0; i < 3; i++) {
 	       digitalWrite(LEDPins[3], LOW);      // P1 Red On
   	     digitalWrite(LEDPins[6], HIGH);     // P2 Red Off
-    	   delay(100);
+    	   delay(delay1);
 	       digitalWrite(LEDPins[3], HIGH);     // P1 Red Off
   	     digitalWrite(LEDPins[6], HIGH);     // P2 Red Off
-    	   delay(100);
+    	   delay(delay1);
   	   }
   	   P2Wins++;
   	   digitalWrite(LEDPins[5], LOW);        // P2 Yellow On
@@ -226,10 +230,10 @@ void loop() {
   	   for(int i = 0; i < 3; i++) {
 	       digitalWrite(LEDPins[3], HIGH);     // P1 Red Off
   	     digitalWrite(LEDPins[6], LOW);      // P2 Red On
-    	   delay(100);
+    	   delay(delay1);
 	       digitalWrite(LEDPins[3], HIGH);     // P1 Red Off
   	     digitalWrite(LEDPins[6], HIGH);     // P2 Red Off
-    	   delay(100);
+    	   delay(delay1);
     	 }
       P1Wins++;
   	   digitalWrite(LEDPins[2], LOW);        // P1 Yellow On
@@ -268,11 +272,11 @@ void loop() {
 	    if(i < P2Wins) {
        digitalWrite(LEDPins[5], LOW);         // P2 Yellow On
 	    }
-      delay(100);
+      delay(delay1);
       for (int i = 0; i < NumberOfLEDS; i++) {    // Turn off LEDS
         digitalWrite(LEDPins[i], HIGH);
       }
-	    delay(900);
+	    delay(delay2);
     }
   }
   if(digitalRead(gameSelectPin) == LOW) {         // Game 2 Selected    
@@ -302,10 +306,10 @@ void loop() {
   	      for(int i = 0; i < 3; i++) {
 	          digitalWrite(LEDPins[3], LOW);      // P1 Red On
             digitalWrite(LEDPins[6], LOW);      // P2 Red On
-    	      delay(100);
+    	      delay(delay1);
 	          digitalWrite(LEDPins[3], HIGH);     // P1 Red Off
   	        digitalWrite(LEDPins[6], HIGH);     // P2 Red Off
-      	    delay(900);
+      	    delay(delay2);
   	      }
   	      isNewGame = false;
   	    }
@@ -347,10 +351,10 @@ void loop() {
   	      for(int i = 0; i < 3; i++) {
     	      digitalWrite(LEDPins[1], LOW);      // P1 Green On
             digitalWrite(LEDPins[4], LOW);      // P2 Green On
-    	      delay(100);
+    	      delay(delay1);
 	          digitalWrite(LEDPins[1], HIGH);     // P1 Green Off
             digitalWrite(LEDPins[4], HIGH);     // P2 Green Off
-    	      delay(100);
+    	      delay(delay1);
   	      }
   	      P2Wins++;
   	      P1Wins++;
@@ -362,10 +366,10 @@ void loop() {
   	      for(int i = 0; i < 3; i++) {
     	      digitalWrite(LEDPins[1], LOW);      // P1 Green On
             digitalWrite(LEDPins[4], LOW);      // P2 Green On
-    	      delay(100);
+    	      delay(delay1);
 	          digitalWrite(LEDPins[1], HIGH);     // P1 Green Off
             digitalWrite(LEDPins[4], HIGH);     // P2 Green Off
-    	     delay(100);
+    	     delay(delay1);
         	}
           P1Wins++;
   	      digitalWrite(LEDPins[2], LOW);        // P1 Yellow On
@@ -375,10 +379,10 @@ void loop() {
         	for(int i = 0; i < 3; i++) {
     	     digitalWrite(LEDPins[1], LOW);      // P1 Green On
            digitalWrite(LEDPins[4], LOW);      // P2 Green On
-        	  delay(100);
+        	  delay(delay1);
 	         digitalWrite(LEDPins[1], HIGH);     // P1 Green Off
            digitalWrite(LEDPins[4], HIGH);     // P2 Green Off
-        	  delay(100);
+        	  delay(delay1);
   	      }
         	P2Wins++;
   	      digitalWrite(LEDPins[5], LOW);        // P2 Yellow on
@@ -421,10 +425,10 @@ void loop() {
   	      for(int i = 0; i < 3; i++) {
 	          digitalWrite(LEDPins[3], LOW);      // P1 Red On
   	        digitalWrite(LEDPins[6], LOW);      // P2 Red On
-    	      delay(100);
+    	      delay(delay1);
 	          digitalWrite(LEDPins[3], HIGH);     // P1 Red Off
   	        digitalWrite(LEDPins[6], HIGH);     // P2 Red Off
-    	      delay(100);
+    	      delay(delay1);
     	    }
   	      isNewGame = true;
 	      }
@@ -432,10 +436,10 @@ void loop() {
   	      for(int i = 0; i < 3; i++) {
 	          digitalWrite(LEDPins[3], LOW);      // P1 Red On
   	        digitalWrite(LEDPins[6], LOW);      // P2 Red On
-    	      delay(100);
+    	      delay(delay1);
 	          digitalWrite(LEDPins[3], HIGH);     // P1 Red Off
   	        digitalWrite(LEDPins[6], HIGH);     // P2 Red Off
-    	      delay(100);
+    	      delay(delay1);
   	      }
   	      P2Wins++;
   	      digitalWrite(LEDPins[5], LOW);        // P2 Yellow On
@@ -445,10 +449,10 @@ void loop() {
   	      for(int i = 0; i < 3; i++) {
 	          digitalWrite(LEDPins[3], LOW);      // P1 Red On
   	        digitalWrite(LEDPins[6], LOW);      // P2 Red On
-    	      delay(100);
+    	      delay(delay1);
 	          digitalWrite(LEDPins[3], HIGH);     // P1 Red Off
   	        digitalWrite(LEDPins[6], HIGH);     // P2 Red Off
-    	      delay(100);
+    	      delay(delay1);
     	    }
         	P1Wins++;
   	      digitalWrite(LEDPins[2], LOW);        // P1 Yellow On
@@ -487,11 +491,11 @@ void loop() {
 	      if(i < P2Wins) {
   	      digitalWrite(LEDPins[5], LOW);         // P2 Yellow On
 	      }
-  	    delay(100);
+  	    delay(delay1);
         for (int i = 0; i < NumberOfLEDS; i++) {    // Turn off LEDS
           digitalWrite(LEDPins[i], HIGH);
         }
-	      delay(900);
+	      delay(delay2);
       }
    }   
 }
